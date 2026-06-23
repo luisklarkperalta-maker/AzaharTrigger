@@ -49,6 +49,7 @@ private:
     void ThreadWorker();
     void StartThreadPool(size_t num_threads);
     void StopThreadPool();
+};
 
 } // namespace Pica::Shader
 
