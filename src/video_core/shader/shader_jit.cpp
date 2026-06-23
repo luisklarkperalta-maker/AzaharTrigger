@@ -72,6 +72,8 @@ void JitEngine::SetupBatch(ShaderSetup& setup, u32 entry_point) {
     setup.DoProgramCodeFixup();
     const u64 code_hash = setup.GetProgramCodeHash();
     const u64 swizzle_hash = setup.GetSwizzleDataHash();
+    const u64 cache_key = Common::HashCombine(code_hash, swizzle_hash);
+
     std::shared_future<std::unique_ptr<JitShader>> shader_future;
     {
         std::lock_guard<std::mutex> lock(cache_mutex);
