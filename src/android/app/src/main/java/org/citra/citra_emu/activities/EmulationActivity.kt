@@ -106,7 +106,7 @@ class EmulationActivity : AppCompatActivity() {
         requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_LOCKED
 
         super.onCreate(savedInstanceState)
-
+        NativeLibrary.initMultiplayer()
         secondaryDisplay = SecondaryDisplay(this)
         secondaryDisplay.updateDisplay()
 
@@ -229,6 +229,7 @@ class EmulationActivity : AppCompatActivity() {
         instance = null
         secondaryDisplay.releasePresentation()
         secondaryDisplay.releaseVD()
+        NetPlayDialog.stopWifiDirect()
 
         super.onDestroy()
     }
