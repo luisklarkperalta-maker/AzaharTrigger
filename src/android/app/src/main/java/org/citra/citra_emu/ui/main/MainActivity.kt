@@ -215,6 +215,7 @@ class MainActivity : AppCompatActivity(), ThemeProvider {
     }
 
     override fun onDestroy() {
+        NetPlayDialog.stopWifiDirect()
         super.onDestroy()
     }
 
