@@ -38,6 +38,19 @@ class NetPlayDialog(context: Context) : BottomSheetDialog(context) {
     private val gameNameList: MutableList<Array<String>> = mutableListOf()
     private val gameIdList: MutableList<Array<Long>> = mutableListOf()
 
+    companion object {
+        // Kept alive across NetPlayDialog instances: the Wi-Fi Direct group must remain up
+        // for the duration of the multiplayer session, which outlasts the connection dialog.
+        // Cleared (and the group torn down) when the user leaves the lobby.
+        private var activeWifiDirectManager: WifiDirectManager? = null
+
+        /** Call from the host Activity's onDestroy to ensure the Wi-Fi Direct group is torn down. */
+        fun stopWifiDirect() {
+            activeWifiDirectManager?.stop()
+            activeWifiDirectManager = null
+        }
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
