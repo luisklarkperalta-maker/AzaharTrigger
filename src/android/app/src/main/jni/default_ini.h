@@ -91,6 +91,11 @@ static const char* android_config_default_file_content = (BOOST_HANA_STRING(R"(
 # Range is any positive integer (but we suspect 25 - 400 is a good idea) Default is 100
 )") DECLARE_KEY(cpu_clock_percentage) BOOST_HANA_STRING(R"(
 
+# Set a custom value of CPU ticks.
+# 0 (default): Off, 1: On
+custom_cpu_ticks =
+cpu_ticks =
+
 [Renderer]
 # Whether to render using OpenGL
 # 1: OpenGL ES (default), 2: Vulkan

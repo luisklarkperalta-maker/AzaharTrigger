@@ -615,6 +615,10 @@ struct Values {
     SwitchableSetting<bool> async_custom_loading{true, Keys::async_custom_loading};
     SwitchableSetting<bool> disable_right_eye_render{false, Keys::disable_right_eye_render};
 
+    // Tweaks
+    SwitchableSetting<bool> custom_cpu_ticks{false, "custom_cpu_ticks"};
+    SwitchableSetting<u64, true> cpu_ticks{16000, 77, 65535, "cpu_ticks"};
+
     // Audio
     bool audio_muted;
     SwitchableSetting<AudioEmulation> audio_emulation{AudioEmulation::HLE, Keys::audio_emulation};

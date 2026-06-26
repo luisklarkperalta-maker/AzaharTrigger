@@ -266,6 +266,29 @@ class SettingsFragmentPresenter(private val fragmentView: SettingsFragmentView) 
                     BooleanSetting.ANDROID_HIDE_IMAGES.defaultValue
                 )
             )
+            add(
+                SwitchSetting(
+                    IntSetting.CUSTOM_CPU_TICKS,
+                    R.string.custom_cpu_ticks,
+                    R.string.custom_cpu_ticks_description,
+                    IntSetting.CUSTOM_CPU_TICKS.key,
+                    IntSetting.CUSTOM_CPU_TICKS.defaultValue
+                )
+            )
+            if (IntSetting.CUSTOM_CPU_TICKS.int == 1) {
+                add(
+                    SliderSetting(
+                        IntSetting.CPU_TICKS,
+                        R.string.cpu_ticks,
+                        0,
+                        77,
+                        65535,
+                        "",
+                        IntSetting.CPU_TICKS.key,
+                        IntSetting.CPU_TICKS.defaultValue.toFloat()
+                    )
+                )
+            }
         }
     }
 

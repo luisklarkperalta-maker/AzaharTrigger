@@ -11,6 +11,8 @@ enum class IntSetting(
     override val section: String,
     override val defaultValue: Int
 ) : AbstractIntSetting {
+    CUSTOM_CPU_TICKS("custom_cpu_ticks", Settings.SECTION_CORE, 0),
+    CPU_TICKS("cpu_ticks", Settings.SECTION_CORE, 16000),
     FRAME_LIMIT(SettingKeys.frame_limit(), Settings.SECTION_RENDERER, 100),
     EMULATED_REGION(SettingKeys.region_value(), Settings.SECTION_SYSTEM, -1),
     INIT_CLOCK(SettingKeys.init_clock(), Settings.SECTION_SYSTEM, 0),
