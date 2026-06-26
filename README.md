@@ -20,7 +20,7 @@ The Azahar logo is the property of PabloMK7 and angyartanddraw
 
 # Installation
 
-### Windows / Linux
+## Windows / Linux
 
 Download the latest release from [Releases](https://github.com/AzaharPlus/AzaharPlus/releases).
 
