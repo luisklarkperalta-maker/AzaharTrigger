@@ -564,7 +564,7 @@ std::vector<std::shared_ptr<CheatBase>> GatewayCheat::LoadFile(const std::string
             }
         }
     }
-
+    #if 0
     if (cheats_json.contains(titleId)) {
         nlohmann::json gameJs = cheats_json[titleId];
 
@@ -589,6 +589,7 @@ std::vector<std::shared_ptr<CheatBase>> GatewayCheat::LoadFile(const std::string
             }
         }
     }
+    #endif
 
     return cheats;
 }

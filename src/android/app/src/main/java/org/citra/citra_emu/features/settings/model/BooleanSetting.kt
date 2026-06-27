@@ -12,6 +12,7 @@ enum class BooleanSetting(
     override val defaultValue: Boolean
 ) : AbstractBooleanSetting {
     EXPAND_TO_CUTOUT_AREA(SettingKeys.expand_to_cutout_area(), Settings.SECTION_LAYOUT, false),
+    CUSTOM_CPU_TICKS("custom_cpu_ticks", Settings.SECTION_CORE, false),
     SPIRV_SHADER_GEN(SettingKeys.spirv_shader_gen(), Settings.SECTION_RENDERER, true),
     ASYNC_SHADERS(SettingKeys.async_shader_compilation(), Settings.SECTION_RENDERER, false),
     DISABLE_SPIRV_OPTIMIZER(SettingKeys.disable_spirv_optimizer(), Settings.SECTION_RENDERER, true),
